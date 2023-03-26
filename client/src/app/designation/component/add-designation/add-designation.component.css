@@ -1,0 +1,75 @@
+
+form{
+    width: max-content;
+    height: 70%;
+    background-color: rgb(216, 215, 215);
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    padding: 20px;
+    transform: translate(-50%,-50%);
+    
+}
+@media  screen and (max-width:414px){
+    form {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(216, 215, 215);
+        position: absolute;
+        top: 200px;
+        left: 56%;
+        box-shadow: none;
+        padding: 10px 20px;
+        margin-top: 50px;
+        transform: translate(-50%,-50%);
+    }
+    }
+    @media  screen and (max-width:390px){
+    form {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(216, 215, 215);
+        position: absolute;
+        top: 28%;
+        left: 59%;
+        box-shadow: none;
+        padding: 10px 20px;
+        margin-top: 50px;
+        transform: translate(-50%,-50%);
+    }
+    }
+
+    multipleSelection {
+        width: 300px;
+        background-color: #BCC2C1;
+    }
+
+    .selectBox {
+        position: relative;
+    }
+
+    .selectBox select {
+        width: 100%;
+        font-weight: bold;
+    }
+
+    .overSelect {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    #checkBoxes {
+        display: none;
+        border: 1px #8DF5E4 solid;
+    }
+
+    #checkBoxes label {
+        display: block;
+    }
+
+    #checkBoxes label:hover {
+        background-color: #4F615E;
+    }

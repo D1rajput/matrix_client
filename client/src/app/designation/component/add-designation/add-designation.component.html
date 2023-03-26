@@ -1,0 +1,46 @@
+<div class="d-flex">
+    
+    <div class="container col p-2">
+<form [formGroup]="addDesignationform" (ngSubmit)="onSubmit()" class="shadow">
+    <div id="main" class="d-flex justify-content-between">
+        <h4 class="text-center">Add Designation</h4>
+    <!-- <div style="font-weight:500;width:30px;height:30px;border-radius:50%; background-color:#bd574e;text-align:center;padding-top:5px;color:white">X</div> -->
+    <i  routerLink="/designation" class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <div class="form-outline mb-4 mt-4" style="width: 300px;">
+        <label>Designation Name </label><br><br>
+        <input type="text" formControlName="name" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+            style="margin-top: -5px; " />
+
+        <div
+            *ngIf="addDesignationform.get('name').invalid && (addDesignationform.get('name').dirty || addDesignationform.get('name').touched)">
+            <p style="color: red;">Please provide a valid name.</p>
+        </div>
+    </div>
+
+    <div class="form-outline mb-4 mt-4" style="width: 300px;">
+        <label>Description </label><br><br>
+        <input type="text" formControlName="description" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['description'].errors }"
+            style="margin-top: -5px; " />
+
+        <div
+            *ngIf="addDesignationform.get('description').invalid && (addDesignationform.get('description').dirty || addDesignationform.get('description').touched)">
+            <p style="color: red;">Please provide a valid description.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="col-md-12 text-center">
+
+    <button type="submit" class="btn btn-primary btn-block mb-4" style="background-color: #0080FB;border: none;">
+        Add Designation
+    </button>
+    </div>
+
+
+</form>
+</div>
+</div>

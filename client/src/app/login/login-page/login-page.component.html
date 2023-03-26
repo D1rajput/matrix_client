@@ -1,0 +1,87 @@
+<div class="highwid row container border border-2 rounded">
+  <div class="box2 col" style="margin-left: -29px">
+    <p class="box2p">
+      Welcome, <br />
+      Please enter your login information to access your account.
+    </p>
+  </div>
+
+  <div class="box1 col">
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="text-center">
+        <h2>Login here</h2>
+      </div>
+      <br />
+      <input
+        id="emailLower"
+        class="form-control mt-2"
+        type="text"
+        placeholder="Enter Email or number"
+        formControlName="email"
+        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+        style="background-color: rgb(227, 224, 224); margin-top: -3px"
+      />
+      <div
+        *ngIf="
+          loginForm.get('email').invalid &&
+          (loginForm.get('email').dirty || loginForm.get('email').touched)
+        "
+      >
+        <p style="color: red">Please provide valid details.</p>
+      </div>
+      <br />
+      <div>
+        <div class="input-group" >
+          <input
+            class="form-control mb-2"
+            [type]="changeType1 ? 'password' : 'text'"
+            placeholder="Enter Password"
+            formControlName="password"
+            [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+            style="background-color: rgb(227, 224, 224); margin-top: -3px"
+          />
+
+          <span
+            class="input-group-text"
+            id="addon-wrapping"
+            style="
+              color: black;
+              font-size: 18px;
+              background-color: transparent;
+              border-left: none;
+              border-color: rgb(216, 216, 216);
+              position:relative;
+              bottom:4px;
+            "
+          >
+            <i
+              [ngClass]="visible1 ? 'fa fa-eye-slash' : 'fa fa-eye'"
+              (click)="show1()"
+            ></i>
+          </span>
+
+         
+        </div>
+        <div
+        *ngIf="
+          loginForm.get('password').invalid &&
+          (loginForm.get('password').dirty ||
+            loginForm.get('password').touched)
+        "
+      >
+        <p style="color: red">Please provide a Password.</p>
+      </div>
+        <a routerLink="/resetPassword">forget Password?</a>
+      </div>
+
+      <div class="text-center">
+        <button
+          class="btn btn-primary mt-3"
+          style="background-color: #0668E1; border: none"
+        >
+          {{ btnName }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

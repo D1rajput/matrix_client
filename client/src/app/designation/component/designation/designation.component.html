@@ -1,0 +1,90 @@
+<div class="d-flex">
+
+
+
+  <div class="container col p-2" style="width: 85%">
+    <nav class="navigation-item">
+      <button class="btn add" routerLink="../designation">Type Path</button>
+      <button class="btn add" routerLink="../login">Template</button>
+    </nav>
+    <div class="d-flex justify-content-end p-2 designation">
+      <div class="input-group">
+        <input class="form-control border-end-0 border" type="text" placeholder="search" [(ngModel)]="filter"
+          id="example-search-input" />
+        <button class="btn btn-clear" *ngIf="filter.length != 0" (click)="filterFun()">
+          clear
+        </button>
+        <button class="btn btn-outline-secondary bg-white border-start-0 border ms-n3" type="button"
+          (click)="search(filter)">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+      <a routerLink="/saveDesignation" class="btn add" style="text-decoration: none; color: white">Add Role</a>
+    </div>
+    <div class="table-responsive w-100">
+      <table id="member">
+        <tr>
+          <th>Designation name</th>
+          <th>Description</th>
+          <th>Created By</th>
+          <th>Created Date</th>
+        </tr>
+        <tr *ngFor="
+            let d of filtereddesiganation
+              | paginate: { itemsPerPage: size, currentPage: p };
+            let i = index
+          " (click)="open(d)" data-bs-toggle="modal" data-bs-target="#myModal">
+          <td [ngStyle]="{ 'background-color': d.isActive ? '' : '#ddd' }">
+            {{ d.name }}
+          </td>
+          <td [ngStyle]="{ 'background-color': d.isActive ? '' : '#ddd' }">
+            {{ d.description }}
+          </td>
+          <td [ngStyle]="{ 'background-color': d.isActive ? '' : '#ddd' }">
+            {{ d.createdByName }}
+          </td>
+          <td [ngStyle]="{ 'background-color': d.isActive ? '' : '#ddd' }">
+            {{ d.createdDate }}
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div *ngIf="filtereddesiganation.length === 0 && !NoItm">
+      <h3 style="margin: 15% auto; width: fit-content">
+        No Result to Show ...
+      </h3>
+    </div>
+    <pagination-controls class="p-2" *ngIf="!NoItm && filtereddesiganation.length != 0"
+      (pageChange)="p = $event"></pagination-controls>
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <form>
+              <div class="input-group m-1">
+                <label class="w-25">Designation:</label><input class="w-75 form-control"
+                  [(ngModel)]="desiganationInstance.name" [ngModelOptions]="{ standalone: true }" />
+              </div>
+              <div class="input-group m-1">
+                <label class="w-25">Description:</label><input class="w-75 form-control"
+                  [(ngModel)]="desiganationInstance.description" [ngModelOptions]="{ standalone: true }" />
+              </div>
+              <div class="input-group m-1">
+                <label class="w-25">Status:</label>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" style="width: 60px; height: 30px" type="checkbox" role="switch"
+                    id="flexSwitchCheckChecked" [(ngModel)]="desiganationInstance.isActive"
+                    [ngModelOptions]="{ standalone: true }" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer" style="border: 0px">
+            <button class="btn action" (click)="action()">Edit</button>
+            <button class="btn action" data-bs-dismiss="modal">Dismiss</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

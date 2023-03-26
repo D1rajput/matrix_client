@@ -1,0 +1,82 @@
+#member {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#member td,
+#member th {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+#member tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#member tr:hover {
+    background-color: #ddd;
+}
+
+#member th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0080FB;
+    color: white;
+}
+.designation{
+    background-color:white;
+}
+
+.btn:hover{
+    background-color: #a7a3a2;
+}
+
+.add{
+    background-color:#0080FB;
+    color: white;
+    margin-left: 10px;
+}
+
+.action{
+    background-color: #0080FB;
+    color: white;
+}
+
+.btn-clear{
+    background-color: white !important;
+}
+pagination-controls{
+    /* position:fixed;bottom:10px;  */
+}
+@media  screen and (max-width:414px){
+    pagination-controls {
+
+/* bottom: 344px; */
+/* bottom: 10px; */
+    }
+    /* .designation{
+       width: 114%;
+    } */
+}
+@media  screen and (max-width:390px){
+    pagination-controls {
+
+        /* bottom: 341px; */
+    }
+}
+@media  screen and (max-width:412px){
+    pagination-controls {
+
+        /* bottom: 370px; */
+        /* bottom: 10px; */
+    }
+}
+
+@media  screen and (max-width:400px){
+    pagination-controls {
+
+        /* bottom: 10px !important; */
+    }
+}

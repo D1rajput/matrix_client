@@ -1,0 +1,32 @@
+{
+  "expenses": [
+    {
+      "name": "volvo",
+      "skills": [
+        {
+          "skill": "zcd",
+          "exp": "1000"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "volvo",
+      "skills": [
+        {
+          "skill": "xas",
+          "exp": "122"
+        },
+        {
+          "skill": "d",
+          "exp": "21"
+        },
+        {
+          "skill": "sda",
+          "exp": "21"
+        }
+      ],
+      "id": 2
+    }
+  ]
+}
